@@ -1,8 +1,8 @@
 import { Flex, Icon, IconButton, useBreakpointValue } from '@chakra-ui/react';
-import { Logo } from './Logo';
 
 import { useSidebarDrawer } from '../../contexts/SidebarDrawerContext';
 
+import { Logo } from '../Logo';
 import { NotificationsNav } from './NotificationsNav';
 import { Profile } from './Profile';
 import { SearchBox } from './SearchBox';

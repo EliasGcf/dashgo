@@ -11,11 +11,22 @@ type NavLinkProps = ChakraLinkProps & {
   icon: ElementType;
   href: string;
   children: string;
+  shouldMatchExactHref?: boolean;
 };
 
-export function NavLink({ icon, href, children, ...rest }: NavLinkProps) {
+export function NavLink({
+  icon,
+  href,
+  children,
+  shouldMatchExactHref,
+  ...rest
+}: NavLinkProps) {
   return (
-    <ActiveLink href={href} passHref>
+    <ActiveLink
+      href={href}
+      shouldMatchExactHref={shouldMatchExactHref}
+      passHref
+    >
       <ChakraLink display="flex" align="center" {...rest}>
         <Icon as={icon} fontSize="20" />
         <Text marginLeft="4" fontWeight="medium">

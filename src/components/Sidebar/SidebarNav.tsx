@@ -4,6 +4,7 @@ import {
   RiContactsLine,
   RiInputMethodLine,
   RiGitMergeLine,
+  RiLogoutCircleLine,
 } from 'react-icons/ri';
 
 import { NavLink } from './NavLink';
@@ -26,6 +27,11 @@ export function SidebarNav() {
         </NavLink>
         <NavLink href="/automation" icon={RiGitMergeLine}>
           Automação
+        </NavLink>
+      </NavSection>
+      <NavSection title="CONFIGURAÇÃO">
+        <NavLink href="/" shouldMatchExactHref icon={RiLogoutCircleLine}>
+          Sair
         </NavLink>
       </NavSection>
     </Stack>
