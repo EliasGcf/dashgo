@@ -43,7 +43,7 @@ type UserUsersOptions = {
   };
 };
 
-function useUsers(page: number, options: UserUsersOptions) {
+function useUsers(page: number, options?: UserUsersOptions) {
   return useQuery(['users', { page }], () => getUsers(page), {
     staleTime: TEN_MINUTES_IN_MILLISECONDS,
     ...options,

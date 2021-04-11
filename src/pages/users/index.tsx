@@ -21,24 +21,16 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react';
 
-import { getUsers, User, useUsers } from '../../services/hooks/userUsers';
+import { useUsers } from '../../services/hooks/userUsers';
 import { Header, Pagination, Sidebar } from '../../components';
 import { queryClient } from '../../services/queryClient';
 import { api } from '../../services/api';
-import { GetServerSideProps } from 'next';
 
 const TEN_MINUTES_IN_MILLISECONDS = 1000 * 60 * 10;
 
-type UserListProps = {
-  users: User[];
-  totalCount: number;
-};
-
-export default function UsersList({ users, totalCount }: UserListProps) {
+export default function UsersList() {
   const [page, setPage] = useState(1);
-  const { data, isLoading, error, isFetching, refetch } = useUsers(page, {
-    initialData: { users, totalCount },
-  });
+  const { data, isLoading, error, isFetching, refetch } = useUsers(page);
 
   const isWideVersion = useBreakpointValue({
     base: false,
@@ -176,14 +168,3 @@ export default function UsersList({ users, totalCount }: UserListProps) {
     </Box>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  const { users, totalCount } = await getUsers(1);
-
-  return {
-    props: {
-      users,
-      totalCount,
-    },
-  };
-};
