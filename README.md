@@ -13,7 +13,7 @@
 </p>
 
 <p align="center">
-  <img alt="DoWhile Mockup" src=".github/mockup.png" width="100%">
+  <img alt="dashgo Mockup" src=".github/mockup.png" width="100%">
 </p>
 
 ## 🚀 Technologies
